@@ -29,20 +29,23 @@ and until then specific tests can be written in each test directory:**
 Use a unique filename for the test script, starting with **test_**.
 
 To prevent problems with file paths, use the following boilerplate code for
-individual tests: ::
+individual tests:
 
-	#!/usr/bin/env python
-	# -*- coding: utf-8 -*-
-	import os
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
 
-	import reda
+import reda
 
-	basepath = os.path.dirname(__file__) + os.sep
+basepath = os.path.dirname(__file__) + os.sep
 
 
-	def test_loading_normal():
-		ert = reda.ERT()
-		ert.import_syscal_bin(basepath + 'data_normal.bin')
+def test_loading_normal():
+	ert = reda.ERT()
+	# test import function
+	ert.import_syscal_bin(basepath + 'data_normal.bin')
+```
 
 ## Checklist for new data sets
 
