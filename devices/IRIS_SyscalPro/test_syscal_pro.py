@@ -7,7 +7,8 @@ basepath = os.path.dirname(__file__) + os.sep
 
 
 @pytest.fixture(scope='class')
-def loader(request):
+def loader_txt(request):
+    """Fixture to load one or more text data files from the syscal"""
     filenames = request.cls.filenames
     ert = reda.ERT()
     ert.import_syscal_txt(basepath + filenames[0])
@@ -19,7 +20,7 @@ def loader(request):
     yield
 
 
-@pytest.mark.usefixtures("loader")
+@pytest.mark.usefixtures("loader_txt")
 class TestClass(object):
     filenames = ['01_txt/data_nor.txt', '01_txt/data_rec.txt']
     nr_electrodes = 48
@@ -35,7 +36,7 @@ class TestClass(object):
         self.ert.pseudosection()
 
 
-@pytest.mark.usefixtures("loader")
+@pytest.mark.usefixtures("loader_txt")
 class TestClass1(object):
     filenames = ['01_txt/data_nor.txt', ]
 
