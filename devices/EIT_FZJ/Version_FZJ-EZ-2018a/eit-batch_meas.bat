@@ -1,0 +1,1 @@
+START "TomoGr" /WAIT /REALTIME "C:\EIT160\TomoGrB-160_V12.11.2015\TomoGrB-160K.exe" "C:\Monitoring\Data\20200310\m_20200310_1047_46_UTC+0000_std20_f01_root_green_lilly\Data\eit_data" "C:\Monitoring\MFF\01_F1Hz45kHz9V.mff" "C:\Monitoring\MCF\20_widerstand_1-4.mcf"

@@ -1,0 +1,32 @@
+MD(nf).Na : - : (ni, 1) : Number of sampling points stored in the binary data
+MD(nf).Nbs : - : (ni, 1) : Block size for complex voltage value. Na/Nbs is the numer of repititions nr
+MD(nf).Np : - : (ni, 1) : Number of periods per measurement frequency and channel
+MD(nf).nfm : - : (ni, 1) : Current number of the measurement frequency fm
+MD(nf).nni : - : (ni, 1) : Current number of the current excitation 
+MD(nf).cni : - : (ni, 2) : MUX Channel number used for current excitation 
+MD(nf).snu : - : (ni, nm) : ADC channel number used for voltage measurement at the MUX channel
+MD(nf).cnu : - : (ni, ?) : MUX Channel numbers used to measure voltage
+MD(nf).sni : - : (ni, 4) : ADC channel numbers used to measure the voltage (As3) at Rs1 and Rs2
+MD(nf).Chref : - : (?) : ADC-Channel number to normalize the phase
+MD(nf).fm : Hz : (1) : Measurement frequency
+MD(nf).fa : Hz : (ni, 1) : Effective sampling rate with which the data are stored
+MD(nf).fa1 : Hz : (ni, 1) : Sampling rate of the ADCs
+MD(nf).fa2 : - : (ni, 1) : Oversampling factor
+MD(nf).WTime : s : (ni, 1) : Waiting time between the adjustment of the generator and the beginning of the measurement
+MD(nf).Tm : s : (ni, 1) : Measuring time per block Nbs 
+MD(nf).Time : s : (ni, 1) : Point of time of this measurement since 1-Jan-1904
+MD(nf).U0 : Vp : (ni, 1) : Applied voltage
+MD(nf).Us3 : Vp : (ni, na, nr) : Measured lock-in voltage at the measuring frequency
+MD(nf).Ug3 : V : (ni, na, nr) : Measured DC voltage
+MD(nf).Ue3 : V : (ni, na, nr) : Measured Rms voltage without DC voltage 
+MD(nf).Uc3 : Vp : (ni, 1, nr) : Average soil potential calculated from Us3
+MD(nf).Is3 : Ap : (ni, 1, nr) : Electrical current between cni(:,1) and cni(:,2)
+MD(nf).Il3 : Ap : (ni, 1, nr) : Leakage currents calculated from Ii3
+MD(nf).Ii3 : Ap : (ni, 2, nr) : Injected current at the electrodes AB
+MD(nf).Zg3 : Ohm : (ni, 2, nr) : Calculated Impedance Zg form U1 and Ii (Ui1 = As3(:,2,:), Ui2 = As3(:,4,:)
+MD(nf).Cg3 : F : (ni, 2, nr) : Calculated Cg from Zg (i*2*pi*f *Cg  = 1/Zg) 
+MD(nf).Yl3 : S : (ni, 1, nr) : Calculated Admittance Yl form Uc and Il
+MD(nf).Cl3 : F : (ni, 1, nr) : Calculated Cl from Yl (i*2*pi*f *Cg  = Yl)
+MD(nf).Ze3 : Ohm : (ni, 1, nr) : 
+MD(nf).Zs3 : Ohm : (ni, na, nr) : Calculated Impedance from Us3 and Is3
+MD(nf). : Ohm : (ni, 1, nr) : 

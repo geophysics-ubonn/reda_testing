@@ -1,0 +1,88 @@
+* PXI1Slot2 - PXI-4472 - Ser.-Nr.: 14E9F3A* PXI1Slot3 - PXI-4472 - Ser.-Nr.: 1437E23* PXI1Slot4 - PXI-4472 - Ser.-Nr.: 14B3CBC* PXI1Slot5 - PXI-4472 - Ser.-Nr.: 14B3CB1* PXI1Slot6 - PXI-4472 - Ser.-Nr.: 14E9F1D* PXI1Slot7 - PXI-4472 - Ser.-Nr.: 14E9F32* MDF = format of the measurement data.
+MDF EIT160A
+
+** Reihenfolge der Stromeinspeisungen
+* Parameter for 160 channel (only with multiplexer W253_EIT_Multiplexer_V7 !) measurement: 
+* ABMG Relay A, Relay B, Mode Select, Group Select
+
+* Definition of Mode Select:
+* Mode: 0 = 1. Elektrode auf Generatorsignal 1 , 2. Elektrode auf Generatorsignal 2 (normal Fall)
+* Mode: 1 = 1. Elektrode auf Generatorsignal 2 , 2. Elektrode auf Generatorsignal 1 (reziprok) 
+* Mode: 2 = 1. Elektrode und 2. Elektrode auf Generatorsignal 1
+* Mode: 3 = 1. Elektrode und 2. Elektrode auf Generatorsignal 2
+* Mode: 4 = Kapazitätsbestimmung die Relais auf den Elektrodenverstärker bleiben offen
+* Mode: 5 = Kalibrierung ADC1-4 werden direkt aufs Generatorsignal1 geschaltet
+
+* Definition of Group Select:
+* Group 0 = all open
+* Group 1 = Group 1 (Channel 001-040)
+* Group 2 = Group 2 (Channel 041-080)
+* Group 3 = Group 3 (Channel 081-120)
+* Group 4 = Group 4 (Channel 121-160)
+
+* 1 4
+ABMG 001 013 000 001
+ABMG 013 001 000 001
+
+ABMG 005 009 000 001
+ABMG 009 005 000 001
+
+* Einstellungen für Symetrieverstärker
+* DLL-Befehl SetSymver(Adr,Rel)
+SSYM 200 0
+
+* Anzahl der Kanäle
+NCh 48
+
+* Anzahl der Multiplexer
+NMu 30
+
+* Shunt-Widerstände
+Rs1 5000
+Rs2 5000
+
+* Anschlussnummern der Multiplexermodule
+NA1 043
+NA2 044
+NA3 041
+NA4 042
+
+* Name des Netzwerkes
+* NName NetzZ21
+
+* ComG = Number of the Com Port for the generator.
+ComG 0
+
+* ComV = Number of the Com Port for the current multiplexer.
+ComV 1
+
+* Kennzeichnung des Systems und der angeschlossenen Ketten und Kabel.
+* System: System Name, C: Chain, M: Module Set, N000: not connected
+System  EIT160x01
+Ch001-008 M1160x01
+Ch009-016 M1160x02
+Ch017-024 M1160x03
+Ch025-032 M1160x04
+Ch033-040 M1160x05
+Ch041-048 M1160x06
+Ch049-056 M1160x07
+Ch057-064 M1160x08
+Ch065-072 M1160x09
+Ch073-080 M1160x10
+Ch081-088 M1160x11
+Ch089-096 M1160x12
+Ch097-104 M1160x13
+Ch105-112 M1160x14
+Ch113-120 M1160x15
+
+* File name of the calibration data
+* The file must be in the directory of the measurement data
+CName S48SYS.mat
+
+* File name for the impedance calculation (post processing)
+* PName c:\EIT40#4\EIT-Z\EIT-Z.bat
+
+* File name for texteditor
+FName C:\Program Files\Notepad++\notepad++.exe
+
+* Elektrodenzuordnung der Spannungs- und Stromkanäle
