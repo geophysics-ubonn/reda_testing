@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import reda
+seit = reda.sEIT()
+
+seit.import_mpt_das1('SIP1.Data')
